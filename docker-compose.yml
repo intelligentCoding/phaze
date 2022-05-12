@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  api:
+    build: ./API-Gateway
+    ports:
+      - "3999:3999"
+    container_name: api
+    environment:
+      - CRYPTO_URL=http://crypto:4000
+      - STOCKS_URL=http://stocks:4001
+    depends_on: 
+      - "crypto"
+      - "stocks"
+  crypto:
+    build: ./cryptoSMAServices
+    container_name: crypto
+    environment: 
+      - API_KEY=fDs2aCwlG40wnEyGsbjmgwAwSQFS1H9X
+      - API_BASE=https://api.polygon.io/
+  stocks:
+    build: ./stocksVWAPService
+    container_name: stocks
+    environment: 
+      - API_KEY=fDs2aCwlG40wnEyGsbjmgwAwSQFS1H9X
+      - API_BASE=https://api.polygon.io/

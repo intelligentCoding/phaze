@@ -1,1 +1,2 @@
-# phaze
+## Setup
+

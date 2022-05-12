@@ -15,11 +15,11 @@ services:
     build: ./cryptoSMAServices
     container_name: crypto
     environment: 
-      - API_KEY=fDs2aCwlG40wnEyGsbjmgwAwSQFS1H9X
+      - API_KEY=
       - API_BASE=https://api.polygon.io/
   stocks:
     build: ./stocksVWAPService
     container_name: stocks
     environment: 
-      - API_KEY=fDs2aCwlG40wnEyGsbjmgwAwSQFS1H9X
+      - API_KEY=
       - API_BASE=https://api.polygon.io/
